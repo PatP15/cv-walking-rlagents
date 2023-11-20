@@ -13,7 +13,7 @@ namespace JKress.AITrainer
         [SerializeField] float offsetZ = 20f;
 
         GameObject scenePrefab;
-
+        int y = 0;
         void Awake()
         {
             scenePrefab = GameObject.FindWithTag("agentPrefab");
@@ -28,8 +28,9 @@ namespace JKress.AITrainer
                 {
                     for (int j = 0; j < zCount; j++)
                     {
-                        Instantiate(basePrefab[k], new Vector3(i * offsetX + behaviorOffset, 0, j * offsetZ),
+                        Instantiate(basePrefab[k], new Vector3(i * offsetX + behaviorOffset,  y, j * offsetZ),
                             Quaternion.identity);
+                        y += 20;
                     }
                 }
             }
