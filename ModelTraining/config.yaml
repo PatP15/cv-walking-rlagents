@@ -1,0 +1,8 @@
+train: train
+val : train 
+
+# Classes
+names:
+  0: obstacle
+  1: target
+  2: wall
