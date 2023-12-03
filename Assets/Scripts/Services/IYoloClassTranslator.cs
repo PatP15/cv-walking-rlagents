@@ -1,4 +1,4 @@
-namespace YoloHolo.Services
+﻿namespace YoloHolo.Services
 {
     public interface IYoloClassTranslator
     {

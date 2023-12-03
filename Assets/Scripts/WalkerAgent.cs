@@ -6,6 +6,8 @@ using Unity.MLAgentsExamples;
 using Unity.MLAgents.Sensors;
 using BodyPart = Unity.MLAgentsExamples.BodyPart;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
+using YoloHolo.YoloLabeling;
 
 namespace JKress.AITrainer
 {
@@ -50,7 +52,10 @@ namespace JKress.AITrainer
         [Header("Walk Speed")] //The walking speed to try and achieve
         [Range(0.1f, 4)] [SerializeField] float m_TargetWalkingSpeed = 2; 
         float m_minWalkingSpeed = 0.1f; 
-        float m_maxWalkingSpeed = 4; 
+        float m_maxWalkingSpeed = 4;
+
+        [Header("Observation Scripts")]
+        public YoloObjectLabeler objectLabeler; 
 
         public float MTargetWalkingSpeed // property
         {
@@ -175,6 +180,7 @@ namespace JKress.AITrainer
         /// <summary>
         /// Loop over body parts to add them to observation.
         /// </summary>
+        public bool usingYOLO = true;
         public override void CollectObservations(VectorSensor sensor)
         {
             var cubeForward = m_OrientationCube.transform.forward;
@@ -195,9 +201,117 @@ namespace JKress.AITrainer
             sensor.AddObservation(Quaternion.FromToRotation(hips.forward, cubeForward));
             sensor.AddObservation(Quaternion.FromToRotation(head.forward, cubeForward));
 
+            //Observations for Yolo Bounding Boxes
+            float[] box1 = new float[5];
+            float[] box2 = new float[5];
+            float[] box3 = new float[5];
+            if (usingYOLO)
+            {
+                if(objectLabeler.foundObjects.Count < 3)
+                {
+                    if(objectLabeler.foundObjects.Count == 0)
+                    {
+                        // Assign Box 1 values
+                        box1[0] = 0;
+                        box1[1] = 0;
+                        box1[2] = 0;
+                        box1[3] = 0;
+                        box1[4] = 0;
+
+                        // Assign Box 2 values
+                        box2[0] = 0;
+                        box2[1] = 0;
+                        box2[2] = 0;
+                        box2[3] = 0;
+                        box2[4] = 0;
+
+                        // Assign Box 3 values
+                        box3[0] = 0;
+                        box3[1] = 0;
+                        box3[2] = 0;
+                        box3[3] = 0;
+                        box3[4] = 0;
+                    }
+                    else if(objectLabeler.foundObjects.Count == 1)
+                    {
+                        // Assign Box 1 values
+                        box1[0] = (float)objectLabeler.foundObjects[0].ClassIndex + 1;
+                        box1[1] = objectLabeler.foundObjects[0].TopLeft.x;
+                        box1[2] = objectLabeler.foundObjects[0].TopLeft.y;
+                        box1[3] = objectLabeler.foundObjects[0].BottomRight.x;
+                        box1[4] = objectLabeler.foundObjects[0].BottomRight.y;
+
+                        // Assign Box 2 values
+                        box2[0] = 0;
+                        box2[1] = 0;
+                        box2[2] = 0;
+                        box2[3] = 0;
+                        box2[4] = 0;
+
+                        // Assign Box 3 values
+                        box3[0] = 0;
+                        box3[1] = 0;
+                        box3[2] = 0;
+                        box3[3] = 0;
+                        box3[4] = 0;
+                    }
+                    else
+                    {
+                        // Assign Box 1 values
+                        box1[0] = (float)objectLabeler.foundObjects[0].ClassIndex + 1;
+                        box1[1] = objectLabeler.foundObjects[0].TopLeft.x;
+                        box1[2] = objectLabeler.foundObjects[0].TopLeft.y;
+                        box1[3] = objectLabeler.foundObjects[0].BottomRight.x;
+                        box1[4] = objectLabeler.foundObjects[0].BottomRight.y;
+
+                        // Assign Box 2 values
+                        box2[0] = (float)objectLabeler.foundObjects[1].ClassIndex + 1;
+                        box2[1] = objectLabeler.foundObjects[1].TopLeft.x;
+                        box2[2] = objectLabeler.foundObjects[1].TopLeft.y;
+                        box2[3] = objectLabeler.foundObjects[1].BottomRight.x;
+                        box2[4] = objectLabeler.foundObjects[1].BottomRight.y;
+
+                        // Assign Box 3 values
+                        box3[0] = 0;
+                        box3[1] = 0;
+                        box3[2] = 0;
+                        box3[3] = 0;
+                        box3[4] = 0;
+                    }
+                }
+                else
+                {
+                    // Assign Box 1 values
+                    box1[0] = (float) objectLabeler.foundObjects[0].ClassIndex+1;
+                    box1[1] = objectLabeler.foundObjects[0].TopLeft.x;
+                    box1[2] = objectLabeler.foundObjects[0].TopLeft.y;
+                    box1[3] = objectLabeler.foundObjects[0].BottomRight.x;
+                    box1[4] = objectLabeler.foundObjects[0].BottomRight.y;
+
+                    // Assign Box 2 values
+                    box2[0] = (float)objectLabeler.foundObjects[1].ClassIndex + 1;
+                    box2[1] = objectLabeler.foundObjects[1].TopLeft.x;
+                    box2[2] = objectLabeler.foundObjects[1].TopLeft.y;
+                    box2[3] = objectLabeler.foundObjects[1].BottomRight.x;
+                    box2[4] = objectLabeler.foundObjects[1].BottomRight.y;
+
+                    // Assign Box 3 values
+                    box3[0] = (float)objectLabeler.foundObjects[2].ClassIndex + 1;
+                    box3[1] = objectLabeler.foundObjects[2].TopLeft.x;
+                    box3[2] = objectLabeler.foundObjects[2].TopLeft.y;
+                    box3[3] = objectLabeler.foundObjects[2].BottomRight.x;
+                    box3[4] = objectLabeler.foundObjects[2].BottomRight.y;
+                }
+                sensor.AddObservation(box1);
+                sensor.AddObservation(box2);
+                sensor.AddObservation(box3);
+            }
+            
+            
+
             //Position of target position relative to cube
             sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(targetT.position));
-            
+            //sensor.AddObservation
             foreach (var bodyPart in m_JdController.bodyPartsList)
             {
                 CollectObservationBodyPart(bodyPart, sensor);

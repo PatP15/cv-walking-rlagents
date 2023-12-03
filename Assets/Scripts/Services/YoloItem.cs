@@ -18,13 +18,11 @@ namespace YoloHolo.Services
 
         public string MostLikelyObject { get; protected set; }
 
+        public int ClassIndex { get; protected set; }
+
         public static YoloItem Create(Tensor tensorData, int boxIndex, IYoloClassTranslator translator,
             YoloVersion version)
         {
-            if (version == YoloVersion.V7)
-            {
-                return new YoloV7Item(tensorData, boxIndex, translator);
-            }
 
             if (version == YoloVersion.V8)
             {

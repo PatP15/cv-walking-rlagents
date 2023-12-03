@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1701627542",
+        "python_version": "3.10.4 (main, Mar 31 2022, 08:41:55) [GCC 7.5.0]",
+        "command_line_arguments": "/home/puma/miniconda3/envs/mlagents/bin/mlagents-learn Walker.yaml --run-id YoLoRayCastv2",
+        "mlagents_version": "1.0.0",
+        "mlagents_envs_version": "1.0.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.1.0+cu121",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1701627548"
+    },
+    "total": 5.542611271004716,
+    "count": 1,
+    "self": 0.01432089701120276,
+    "children": {
+        "run_training.setup": {
+            "total": 0.022169215997564606,
+            "count": 1,
+            "self": 0.022169215997564606
+        },
+        "TrainerController.start_learning": {
+            "total": 5.506121157995949,
+            "count": 1,
+            "self": 0.0008423799954471178,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 5.5052586309975595,
+                    "count": 1,
+                    "self": 5.5052586309975595
+                },
+                "TrainerController._save_models": {
+                    "total": 2.0147002942394465e-05,
+                    "count": 1,
+                    "self": 2.0147002942394465e-05
+                }
+            }
+        }
+    }
+}

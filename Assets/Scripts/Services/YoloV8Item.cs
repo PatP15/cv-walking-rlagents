@@ -15,6 +15,7 @@ namespace YoloHolo.Services
             BottomRight = Center + Size / 2;
             Confidence = tensorData[0, 0, boxIndex, 4];
 
+
             var classProbabilities = new List<float>();
             for (var i = 5; i < tensorData.channels; i++)
             {
@@ -22,6 +23,7 @@ namespace YoloHolo.Services
             }
             var maxIndex = classProbabilities.Any() ? classProbabilities.IndexOf(classProbabilities.Max()) : 0;
             MostLikelyObject = translator.GetName(maxIndex);
+            ClassIndex = maxIndex;
         }
     }
 }

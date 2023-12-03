@@ -1,0 +1,74 @@
+{
+    "Walker": {
+        "checkpoints": [
+            {
+                "steps": 999000,
+                "file_path": "results/YoLoRayCastv1/Walker/Walker-999000.onnx",
+                "reward": -4173.960904947917,
+                "creation_time": 1701595079.5315125,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv1/Walker/Walker-999000.pt"
+                ]
+            },
+            {
+                "steps": 1999000,
+                "file_path": "results/YoLoRayCastv1/Walker/Walker-1999000.onnx",
+                "reward": 1333.3105643136162,
+                "creation_time": 1701601813.032415,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv1/Walker/Walker-1999000.pt"
+                ]
+            },
+            {
+                "steps": 2999000,
+                "file_path": "results/YoLoRayCastv1/Walker/Walker-2999000.onnx",
+                "reward": 1617.71948772928,
+                "creation_time": 1701608506.4413795,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv1/Walker/Walker-2999000.pt"
+                ]
+            },
+            {
+                "steps": 3999000,
+                "file_path": "results/YoLoRayCastv1/Walker/Walker-3999000.onnx",
+                "reward": 1761.5810709635416,
+                "creation_time": 1701615230.4749873,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv1/Walker/Walker-3999000.pt"
+                ]
+            },
+            {
+                "steps": 4999000,
+                "file_path": "results/YoLoRayCastv1/Walker/Walker-4999000.onnx",
+                "reward": 2224.7280622209823,
+                "creation_time": 1701621949.0885534,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv1/Walker/Walker-4999000.pt"
+                ]
+            },
+            {
+                "steps": 5720000,
+                "file_path": "results/YoLoRayCastv1/Walker/Walker-5720000.onnx",
+                "reward": 2097.524444580078,
+                "creation_time": 1701626850.54988,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv1/Walker/Walker-5720000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5720000,
+            "file_path": "results/YoLoRayCastv1/Walker.onnx",
+            "reward": 2097.524444580078,
+            "creation_time": 1701626850.54988,
+            "auxillary_file_paths": [
+                "results/YoLoRayCastv1/Walker/Walker-5720000.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.0+cu121"
+    }
+}
