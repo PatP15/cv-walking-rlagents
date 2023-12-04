@@ -55,7 +55,7 @@ namespace JKress.AITrainer
         float m_maxWalkingSpeed = 4;
 
         [Header("Observation Scripts")]
-        public YoloObjectLabeler objectLabeler; 
+        public YoloObjectLabeler objectLabeler;
 
         public float MTargetWalkingSpeed // property
         {
@@ -130,6 +130,10 @@ namespace JKress.AITrainer
                 randomizeWalkSpeedEachEpisode ? Random.Range(m_minWalkingSpeed, m_maxWalkingSpeed) : MTargetWalkingSpeed;
         }
 
+        private float stepTimer = 0f; // Timer to track time since last step
+        private float stepThreshold = 2f; // Time threshold for a step to be taken
+        private float lastFrontFootProjection;
+        private float lastBackFootProjection;
         void FixedUpdate()
         {
             UpdateOrientationObjects();
@@ -151,6 +155,40 @@ namespace JKress.AITrainer
             }
 
             AddReward(matchSpeedReward + 0.1f * lookAtTargetReward);
+            
+            // Project feet positions onto the forward direction
+            float leftFootProjection = Vector3.Dot(hips.forward, footL.position);
+            float rightFootProjection = Vector3.Dot(hips.forward, footR.position);
+
+            // Determine which foot is currently in front
+            bool isLeftFootFront = leftFootProjection > rightFootProjection;
+            float frontFootProjection = isLeftFootFront ? leftFootProjection : rightFootProjection;
+            float backFootProjection = isLeftFootFront ? rightFootProjection : leftFootProjection;
+
+            // Check if the back foot has stepped in front
+            if (backFootProjection > lastFrontFootProjection)
+            {
+                stepTimer = 0; // Reset the timer
+                lastFrontFootProjection = frontFootProjection;
+                lastBackFootProjection = backFootProjection;
+            }
+            else
+            {
+                stepTimer += Time.fixedDeltaTime; // Increment the timer
+            }
+
+            // Apply penalty if back foot hasn't stepped in front within the threshold
+            if (stepTimer > stepThreshold)
+            {
+                //Debug.Log("Penalty applied");
+                float penalty = -0.1f; // Define the penalty value
+                AddReward(penalty);
+            }
+            // deduct point for distance to the target
+            //Debug.Log("Distance to target: " + Vector3.Distance(hips.position, targetT.position));
+            AddReward(-Vector3.Distance(hips.position, targetT.position) / 100f);
+            
+            
         }
 
         /// <summary>

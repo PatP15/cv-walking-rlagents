@@ -1,0 +1,96 @@
+{
+    "Yolo": {
+        "checkpoints": [
+            {
+                "steps": 999000,
+                "file_path": "results/YoloOnly/Yolo/Yolo-999000.onnx",
+                "reward": null,
+                "creation_time": 1701688438.5785167,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/Yolo/Yolo-999000.pt"
+                ]
+            },
+            {
+                "steps": 1999000,
+                "file_path": "results/YoloOnly/Yolo/Yolo-1999000.onnx",
+                "reward": 320.7254638671875,
+                "creation_time": 1701695150.8961842,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/Yolo/Yolo-1999000.pt"
+                ]
+            },
+            {
+                "steps": 2943000,
+                "file_path": "results/YoloOnly/Yolo/Yolo-2943000.onnx",
+                "reward": null,
+                "creation_time": 1701701470.0124893,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/Yolo/Yolo-2943000.pt"
+                ]
+            },
+            {
+                "steps": 2999000,
+                "file_path": "results/YoloOnly/Yolo/Yolo-2999000.onnx",
+                "reward": 714.0787048339844,
+                "creation_time": 1701709872.3687594,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/Yolo/Yolo-2999000.pt"
+                ]
+            },
+            {
+                "steps": 3999000,
+                "file_path": "results/YoloOnly/Yolo/Yolo-3999000.onnx",
+                "reward": 780.5279744466146,
+                "creation_time": 1701716134.418315,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/Yolo/Yolo-3999000.pt"
+                ]
+            },
+            {
+                "steps": 4644000,
+                "file_path": "results/YoloOnly/Yolo/Yolo-4644000.onnx",
+                "reward": null,
+                "creation_time": 1701720200.4362311,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/Yolo/Yolo-4644000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4644000,
+            "file_path": "results/YoloOnly/Yolo.onnx",
+            "reward": null,
+            "creation_time": 1701720200.4362311,
+            "auxillary_file_paths": [
+                "results/YoloOnly/Yolo/Yolo-4644000.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.0+cu121"
+    },
+    "RayCast": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results/YoloOnly/RayCast/RayCast-0.onnx",
+                "reward": null,
+                "creation_time": 1701709431.1455383,
+                "auxillary_file_paths": [
+                    "results/YoloOnly/RayCast/RayCast-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results/YoloOnly/RayCast.onnx",
+            "reward": null,
+            "creation_time": 1701709431.1455383,
+            "auxillary_file_paths": [
+                "results/YoloOnly/RayCast/RayCast-0.pt"
+            ]
+        }
+    }
+}

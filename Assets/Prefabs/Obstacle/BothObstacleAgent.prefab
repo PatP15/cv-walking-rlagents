@@ -1236,6 +1236,7 @@ MonoBehaviour:
   m_TargetWalkingSpeed: 4
   objectLabeler: {fileID: 1795529002744163586}
   randomizeWalkSpeedEachEpisode: 1
+  usingYOLO: 1
 --- !u!114 &3142424548640315436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,7 +1262,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 2
   m_BehaviorType: 0
-  m_BehaviorName: YoloRaycat
+  m_BehaviorName: YoloRaycast
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1

@@ -1,0 +1,73 @@
+{
+    "RayCast": {
+        "checkpoints": [
+            {
+                "steps": 24000,
+                "file_path": "results/YoLoRayCastv3/RayCast/RayCast-24000.onnx",
+                "reward": -165999.7890625,
+                "creation_time": 1701681499.565182,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv3/RayCast/RayCast-24000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24000,
+            "file_path": "results/YoLoRayCastv3/RayCast.onnx",
+            "reward": -165999.7890625,
+            "creation_time": 1701681499.565182,
+            "auxillary_file_paths": [
+                "results/YoLoRayCastv3/RayCast/RayCast-24000.pt"
+            ]
+        }
+    },
+    "Yolo": {
+        "checkpoints": [
+            {
+                "steps": 24000,
+                "file_path": "results/YoLoRayCastv3/Yolo/Yolo-24000.onnx",
+                "reward": -330580.953125,
+                "creation_time": 1701681499.739815,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv3/Yolo/Yolo-24000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24000,
+            "file_path": "results/YoLoRayCastv3/Yolo.onnx",
+            "reward": -330580.953125,
+            "creation_time": 1701681499.739815,
+            "auxillary_file_paths": [
+                "results/YoLoRayCastv3/Yolo/Yolo-24000.pt"
+            ]
+        }
+    },
+    "YoloRaycast": {
+        "checkpoints": [
+            {
+                "steps": 24000,
+                "file_path": "results/YoLoRayCastv3/YoloRaycast/YoloRaycast-24000.onnx",
+                "reward": -150000.75,
+                "creation_time": 1701681499.9099834,
+                "auxillary_file_paths": [
+                    "results/YoLoRayCastv3/YoloRaycast/YoloRaycast-24000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24000,
+            "file_path": "results/YoLoRayCastv3/YoloRaycast.onnx",
+            "reward": -150000.75,
+            "creation_time": 1701681499.9099834,
+            "auxillary_file_paths": [
+                "results/YoLoRayCastv3/YoloRaycast/YoloRaycast-24000.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.0+cu121"
+    }
+}

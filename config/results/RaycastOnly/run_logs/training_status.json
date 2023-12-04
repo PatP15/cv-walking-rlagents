@@ -1,0 +1,38 @@
+{
+    "RayCast": {
+        "checkpoints": [
+            {
+                "steps": 999000,
+                "file_path": "results/RaycastOnly/RayCast/RayCast-999000.onnx",
+                "reward": null,
+                "creation_time": 1701708070.3734007,
+                "auxillary_file_paths": [
+                    "results/RaycastOnly/RayCast/RayCast-999000.pt"
+                ]
+            },
+            {
+                "steps": 1187991,
+                "file_path": "results/RaycastOnly/RayCast/RayCast-1187991.onnx",
+                "reward": null,
+                "creation_time": 1701709372.135794,
+                "auxillary_file_paths": [
+                    "results/RaycastOnly/RayCast/RayCast-1187991.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1187991,
+            "file_path": "results/RaycastOnly/RayCast.onnx",
+            "reward": null,
+            "creation_time": 1701709372.135794,
+            "auxillary_file_paths": [
+                "results/RaycastOnly/RayCast/RayCast-1187991.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.0+cu121"
+    }
+}

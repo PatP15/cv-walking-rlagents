@@ -1,0 +1,29 @@
+{
+    "Yolo": {
+        "checkpoints": [
+            {
+                "steps": 24000,
+                "file_path": "results/YoloOnlyv2/Yolo/Yolo-24000.onnx",
+                "reward": null,
+                "creation_time": 1701720485.3373365,
+                "auxillary_file_paths": [
+                    "results/YoloOnlyv2/Yolo/Yolo-24000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24000,
+            "file_path": "results/YoloOnlyv2/Yolo.onnx",
+            "reward": null,
+            "creation_time": 1701720485.3373365,
+            "auxillary_file_paths": [
+                "results/YoloOnlyv2/Yolo/Yolo-24000.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.0+cu121"
+    }
+}
