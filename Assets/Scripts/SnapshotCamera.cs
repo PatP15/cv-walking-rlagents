@@ -15,6 +15,7 @@ public class SnapshotCamera : MonoBehaviour
     public float imageFreq = 0.5f;
 
     bool picTime = false;
+    public string dirName = "0";
     // Start is called before the first frame update
     void Awake()
     {
@@ -70,8 +71,9 @@ public class SnapshotCamera : MonoBehaviour
 
     string Snapshotname()
     {
-        return string.Format("{0}/Snapshots/snap_{1}_{2}_{3}_{4}.png",
+        return string.Format("{0}/Snapshots/{1}/snap_{2}_{3}_{4}_{5}.png",
             Application.dataPath,
+            dirName,
             resWidth,
             resHeight,
             System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"),

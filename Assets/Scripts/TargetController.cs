@@ -2,6 +2,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using Unity.MLAgents;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 namespace Unity.MLAgentsExamples
 {
@@ -18,9 +19,12 @@ namespace Unity.MLAgentsExamples
         public Vector2 spawnX = new Vector2(-10, 10); //The region in which a target can be spawned.
         public Vector2 spawnY = new Vector2(0.5f, 1.5f);
         public Vector2 spawnZ = new Vector2(-10, 10);
+        public List<GameObject> terrains = new List<GameObject>();
 
         public bool respawnIfTouched = true; //Should the target respawn to a different position when touched
 
+        public bool obstacleAgent = true;
+        public SnapshotCamera snapCam;
         const string k_Agent = "agent";
 
         void FixedUpdate()
@@ -57,6 +61,23 @@ namespace Unity.MLAgentsExamples
             transform.localPosition = newTargetPos; //Use local position
         }
 
+        public void ChooseTerrain()
+        {
+            //choose a random terrain to activate
+            int randomTerrain = Random.Range(0, terrains.Count);
+            terrains[randomTerrain].SetActive(true);
+            snapCam.dirName = randomTerrain.ToString();
+            Debug.Log("Updated Terrain to " + randomTerrain.ToString());
+            //set the rest false
+            for (int i = 0; i < terrains.Count; i++)
+            {
+                if (i != randomTerrain)
+                {
+                    terrains[i].SetActive(false);
+                }
+            }
+        }
+
         private void OnCollisionEnter(Collision col)
         {
             if (col.transform.CompareTag(k_Agent))
@@ -64,6 +85,10 @@ namespace Unity.MLAgentsExamples
                 if (respawnIfTouched)
                 {
                     MoveTargetToRandomPosition();
+                    if (!obstacleAgent)
+                    {
+                        ChooseTerrain();
+                    }
                 }
             }
         }
