@@ -426,7 +426,6 @@ MonoBehaviour:
   - {fileID: 230604616957708385}
   respawnIfTouched: 1
   obstacleAgent: 0
-  snapCam: {fileID: 5560621609191375280}
 --- !u!1 &3050609431601049322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,8 +1321,8 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2500
-  earlyTraining: 0
+  MaxStep: 5000
+  earlyTraining: 1
   targetT: {fileID: 2690988125536251417}
   targetController: {fileID: 2690988125536251418}
   hips: {fileID: 3318584531323817454}
@@ -1343,7 +1342,9 @@ MonoBehaviour:
   hipsStabilizer: {fileID: 3318584531323817455}
   spineStabilizer: {fileID: 3318584531241517200}
   m_TargetWalkingSpeed: 4
+  objectLabeler: {fileID: 0}
   randomizeWalkSpeedEachEpisode: 1
+  usingYOLO: 0
 --- !u!114 &3142424548640315436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,7 +1370,7 @@ MonoBehaviour:
   m_Model: {fileID: 5022602860645237092, guid: d2aa3351f32cdde4c8556bd6a910de03, type: 3}
   m_InferenceDevice: 2
   m_BehaviorType: 0
-  m_BehaviorName: Walker
+  m_BehaviorName: RaycastTerrain
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1

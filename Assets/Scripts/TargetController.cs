@@ -24,7 +24,7 @@ namespace Unity.MLAgentsExamples
         public bool respawnIfTouched = true; //Should the target respawn to a different position when touched
 
         public bool obstacleAgent = true;
-        public SnapshotCamera snapCam;
+        //public SnapshotCamera snapCam;
         const string k_Agent = "agent";
 
         void FixedUpdate()
@@ -44,7 +44,7 @@ namespace Unity.MLAgentsExamples
             Vector3 newTargetPos;
             Collider[] hitColliders;
 
-            do 
+            do
             {
                 newTargetPos = new Vector3(Random.Range(spawnX.x, spawnX.y), rayDown, Random.Range(spawnZ.x, spawnZ.y));
 
@@ -66,7 +66,7 @@ namespace Unity.MLAgentsExamples
             //choose a random terrain to activate
             int randomTerrain = Random.Range(0, terrains.Count);
             terrains[randomTerrain].SetActive(true);
-            snapCam.dirName = randomTerrain.ToString();
+            //snapCam.dirName = randomTerrain.ToString();
             Debug.Log("Updated Terrain to " + randomTerrain.ToString());
             //set the rest false
             for (int i = 0; i < terrains.Count; i++)
