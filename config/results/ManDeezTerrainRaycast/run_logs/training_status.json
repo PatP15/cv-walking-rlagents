@@ -1,0 +1,38 @@
+{
+    "TerrainRayCast": {
+        "checkpoints": [
+            {
+                "steps": 999991,
+                "file_path": "results/ManDeezTerrainRaycast/TerrainRayCast/TerrainRayCast-999991.onnx",
+                "reward": 618.878662109375,
+                "creation_time": 1701766895.2137485,
+                "auxillary_file_paths": [
+                    "results/ManDeezTerrainRaycast/TerrainRayCast/TerrainRayCast-999991.pt"
+                ]
+            },
+            {
+                "steps": 1646991,
+                "file_path": "results/ManDeezTerrainRaycast/TerrainRayCast/TerrainRayCast-1646991.onnx",
+                "reward": null,
+                "creation_time": 1701772432.8396668,
+                "auxillary_file_paths": [
+                    "results/ManDeezTerrainRaycast/TerrainRayCast/TerrainRayCast-1646991.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1646991,
+            "file_path": "results/ManDeezTerrainRaycast/TerrainRayCast.onnx",
+            "reward": null,
+            "creation_time": 1701772432.8396668,
+            "auxillary_file_paths": [
+                "results/ManDeezTerrainRaycast/TerrainRayCast/TerrainRayCast-1646991.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.1.1+cu121"
+    }
+}

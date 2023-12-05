@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4733005290204903971
 Transform:
   m_ObjectHideFlags: 0
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_Model: {fileID: 5022602860645237092, guid: d2aa3351f32cdde4c8556bd6a910de03, type: 3}
   m_InferenceDevice: 2
   m_BehaviorType: 0
-  m_BehaviorName: RaycastTerrain
+  m_BehaviorName: TerrainRayCast
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
