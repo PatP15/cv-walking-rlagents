@@ -11,8 +11,6 @@ The Robot Kyle model from the Unity assets store is used for the ragdoll.
 
 ### Features:
 
-* Default Robot Kyle rig replaced with a new rig created in blender. FBX and blend file included.
-
 * Heuristic function inlcuded to drive the joints by user input (for development testing only).
 
 * Added stabilizer to hips and spine. The stabilizer applies torque to help ragdoll balance.
