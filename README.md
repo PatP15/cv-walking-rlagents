@@ -1,13 +1,11 @@
-![Ragdoll Screenshot](/docs/CombinedAgent.png)
 
-# Ragdoll Trainer Unity Project
-
+# CV and RL Walking Agents
 Active ragdoll training with Unity ML-Agents (PyTorch). 
 
 ## Ragdoll Agent
 
 Based on [walker example](https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Learning-Environment-Examples.md)
-
+Built off of [walker github](https://github.com/kressdev/RagdollTrainer)
 The Robot Kyle model from the Unity assets store is used for the ragdoll.
 
 ![RobotKyleBlend Image](/docs/RobotKyleBlend.png)
@@ -28,9 +26,8 @@ The Robot Kyle model from the Unity assets store is used for the ragdoll.
 
 * Added curiosity to yaml to improve walls and stairs training.
 
-### Training Process (where bool in parenthesis refers to "earlyTraining" setting): 
+* Added two environement one for obstacle detection and another for terrain detection
 
-* Walking: WalkerAgent (true) -> WalkerAgent (false)
-* Walls: WalkerAgent (true) -> WalkerAgent (false) -> WallsAgent (false)
-* Stairs: WalkerAgent (true) -> StairsAgent (true) -> StairsAgent (false)
+* Integrate YOLOv8 with Barracuda and pipe the outputs into the observation space of the RL agent
+
 
