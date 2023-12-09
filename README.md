@@ -8,7 +8,6 @@ Based on [walker example](https://github.com/Unity-Technologies/ml-agents/blob/m
 Built off of [walker github](https://github.com/kressdev/RagdollTrainer)
 The Robot Kyle model from the Unity assets store is used for the ragdoll.
 
-![RobotKyleBlend Image](/docs/RobotKyleBlend.png)
 
 ### Features:
 
